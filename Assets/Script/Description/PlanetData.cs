@@ -16,6 +16,18 @@ public class PlanetData : ScriptableObject
 
     public PlanetType[] planetTypes;
 
+    public double GetMinimumMass()
+    {
+        var value = double.MaxValue;
+        foreach (var item in planetTypes)
+        {
+            if (item.MinMass < value)
+                value = item.MinMass;
+        }
+
+        return value;
+    }
+
     public MassClassEnum GetMassClass(double mass)
     {
         foreach (var type in planetTypes)

@@ -67,14 +67,12 @@ public class PlanetarySystemFactory : MonoBehaviour, IPlanetarySystemFactory
         foreach (var item in masses)
             sum += item;
 
-        Debug.Log(sum + " : " + totalMass);
-
         return planetarySystem;
     }
 
     private double[] GenerateMassDistribution(int count, double totalMass)
     {
-        double minMass = 0.000001;
+        double minMass = _planetData.GetMinimumMass();
         double maxMass = totalMass * 0.6;
 
         double[] masses = new double[count];
@@ -90,7 +88,7 @@ public class PlanetarySystemFactory : MonoBehaviour, IPlanetarySystemFactory
         // Нормалізуємо маси, щоб їхня сума дорівнювала totalMass
         for (int i = 0; i < count; i++)
         {
-            masses[i] = (masses[i] / sumMass) * totalMass;
+            masses[i] = masses[i] / sumMass * totalMass;
         }
 
         return masses;

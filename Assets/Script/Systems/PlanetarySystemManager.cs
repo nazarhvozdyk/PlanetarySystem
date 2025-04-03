@@ -11,9 +11,9 @@ public class PlanetarySystemManager : MonoBehaviour
     private void Start()
     {
         enabled = false;
+        Create();
     }
 
-    [ContextMenu("Create")]
     private void Create()
     {
         _system = _factory.Create(_totalMasse);
