@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -208,13 +209,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: -0, z: -0, w: 0.8660254}
-  m_LocalPosition: {x: 0, y: 281.24173, z: -162.37502}
+  m_LocalRotation: {x: 0.30070576, y: -0, z: -0, w: 0.953717}
+  m_LocalPosition: {x: 0, y: 308.4407, z: -440.49908}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +260,70 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a41d96b7910ad6449f14c195ed3fba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _planetData: {fileID: 0}
+  _startCameraTransform: {fileID: 0}
+  _cameraAttachmentTime: 3
+  _rotationSpeed: 60
+  _minDistanceToPlanet: 1
+  _maxDistanceToPlanet: 25
+--- !u!1 &731272784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731272786}
+  - component: {fileID: 731272785}
+  m_Layer: 0
+  m_Name: PlanetSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &731272785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731272784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09041f5502876e478e2d03532ddc0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 330585545}
+  _cameraMovement: {fileID: 330585548}
+--- !u!4 &731272786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731272784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75b884c9c26bb7e47aa4158c28a64958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _earthRadius: 5
+  _earthRadius: 10
   _earthMassInGame: 100
 --- !u!4 &1810394878
 Transform:
@@ -408,7 +473,7 @@ MonoBehaviour:
   _maxOrbitRadius: 10
   _minOrbitSpeed: 5
   _maxOrbitSpeed: 20
-  _baseOrbitalDistance: 70
+  _baseOrbitalDistance: 75
   _orbitalSpeedFactor: 2
 --- !u!114 &1885214571
 MonoBehaviour:
@@ -544,8 +609,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9960785, g: 0.9960785, b: 0, a: 1}
-  m_Intensity: 50000
-  m_Range: 50000
+  m_Intensity: 70000
+  m_Range: 80000
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -603,3 +668,4 @@ SceneRoots:
   - {fileID: 1810394878}
   - {fileID: 1885214569}
   - {fileID: 2095714046}
+  - {fileID: 731272786}

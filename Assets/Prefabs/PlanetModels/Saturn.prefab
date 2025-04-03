@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.19936788, w: 0.97992474}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8546597226911345713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -143,6 +143,18 @@ PrefabInstance:
       value: PlanetRingNormal
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -181,6 +193,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 4bac097f81176534996088a37b3d4d1e, type: 3}
       propertyPath: m_Materials.Array.data[0]

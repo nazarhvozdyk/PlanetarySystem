@@ -51,9 +51,6 @@ public class PlanetarySystemFactory : MonoBehaviour, IPlanetarySystemFactory
         // creating planet
         var planetObj = Instantiate(_planetPrefab, _systemCenter.position, Quaternion.identity);
         planetObj.Initialize(mass);
-        planetObj.transform.localScale = Vector3.one * radius;
-
-
 
         return planetObj;
     }
@@ -72,24 +69,21 @@ public class PlanetarySystemFactory : MonoBehaviour, IPlanetarySystemFactory
 
     private double[] GenerateMassDistribution(int count, double totalMass)
     {
-        double minMass = _planetData.GetMinimumMass();
-        double maxMass = totalMass * 0.6;
+        var minMass = _planetData.GetMinimumMass();
+        var maxMass = totalMass * 0.6;
 
-        double[] masses = new double[count];
-        double sumMass = 0;
+        var masses = new double[count];
+        var sumMass = 0d;
 
         for (int i = 0; i < count; i++)
         {
-            // Використовуємо експоненційний розподіл для ще більшого розкиду
             masses[i] = minMass * Mathf.Pow((float)(maxMass / minMass), Mathf.Pow(Random.Range(0f, 1f), 2f));
             sumMass += masses[i];
         }
 
-        // Нормалізуємо маси, щоб їхня сума дорівнювала totalMass
+        // normalize mass so they sum euqals totalMass
         for (int i = 0; i < count; i++)
-        {
             masses[i] = masses[i] / sumMass * totalMass;
-        }
 
         return masses;
     }

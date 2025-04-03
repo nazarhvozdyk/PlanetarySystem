@@ -5,6 +5,7 @@ public class Planet : MonoBehaviour, IPlanetaryObject
     private double _mass;
     [SerializeField]
     private PlanetData _planetData;
+    public float radious { get; private set; }
 
     public double Mass => _mass;
 
@@ -13,8 +14,6 @@ public class Planet : MonoBehaviour, IPlanetaryObject
     public void Initialize(double newMass)
     {
         _mass = newMass;
-
-        var radius = _planetData.GetRadius(_mass);
-        transform.localScale = Vector3.one * radius;
+        radious = _planetData.GetRadius(newMass);
     }
 }
