@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcc1b66dfe2a1c4da6c84bb443d9636, type: 3}
+  m_Name: PlanetData
+  m_EditorClassIdentifier: 
+  planetTypes:
+  - massClass: 0
+    MinMass: 0.00001
+    MaxMass: 0.00001
+    MinRadius: 0.01
+    MaxRadius: 0.03
+    modelPrefab: {fileID: 7437795195191638541, guid: 2ed3d52fe6792224788ecfe9a823f370,
+      type: 3}
+  - massClass: 1
+    MinMass: 0.00001
+    MaxMass: 0.1
+    MinRadius: 0.03
+    MaxRadius: 0.07
+    modelPrefab: {fileID: 4768228451904834851, guid: b8db072d20eda3740b359f9eb13c24f4,
+      type: 3}
+  - massClass: 2
+    MinMass: 0.1
+    MaxMass: 0.5
+    MinRadius: 0.5
+    MaxRadius: 1.2
+    modelPrefab: {fileID: 8672650777148785019, guid: 72b5a144af082c64bbb33bb4679db1cf,
+      type: 3}
+  - massClass: 3
+    MinMass: 0.5
+    MaxMass: 2
+    MinRadius: 0.8
+    MaxRadius: 1.9
+    modelPrefab: {fileID: 9181748124599519087, guid: bcdc8a56b7ce52446bb6064f30122404,
+      type: 3}
+  - massClass: 4
+    MinMass: 2
+    MaxMass: 10
+    MinRadius: 1.3
+    MaxRadius: 3.3
+    modelPrefab: {fileID: 1009686957823165506, guid: f1f9246156b99d840ad50332ad482e85,
+      type: 3}
+  - massClass: 5
+    MinMass: 10
+    MaxMass: 50
+    MinRadius: 2.1
+    MaxRadius: 5.7
+    modelPrefab: {fileID: 1265828828369835621, guid: c19a87e6111ede74bbc49a939e1cde18,
+      type: 3}
+  - massClass: 6
+    MinMass: 50
+    MaxMass: 5000
+    MinRadius: 3.5
+    MaxRadius: 27
+    modelPrefab: {fileID: 8257254399875488410, guid: 27f023e16d76df54790fae145b1f49f7,
+      type: 3}
