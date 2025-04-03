@@ -272,12 +272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a41d96b7910ad6449f14c195ed3fba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _planetData: {fileID: 0}
   _startCameraTransform: {fileID: 0}
-  _cameraAttachmentTime: 3
+  _cameraMovementTime: 3
   _rotationSpeed: 60
-  _minDistanceToPlanet: 1
-  _maxDistanceToPlanet: 25
+  _zoomSpeed: 12
 --- !u!1 &731272784
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +606,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9960785, g: 0.9960785, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 70000
   m_Range: 80000
   m_SpotAngle: 30
@@ -653,7 +651,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 1500
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1

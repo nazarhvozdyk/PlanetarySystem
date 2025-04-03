@@ -10,12 +10,14 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private float _rotationSpeed = 60;
     [SerializeField]
-    private float _minDistanceToPlanet = 1;
-    [SerializeField]
-    private float _maxDistanceToPlanet = 25;
+    private float _zoomSpeed = 3f;
 
+    private float _minDistance;
+    private float _maxDistance;
+
+    private bool _isAttachedToPlanet;
     private Planet _currentPlanet;
-    private float _currentZoom;
+    private float _distance;
 
     public delegate void CallBack();
 
@@ -29,6 +31,35 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (!_isAttachedToPlanet)
+            return;
+
+        Zoom();
+
+        if (!Input.GetMouseButton(1))
+            return;
+
+        CameraOrbitalMovement();
+    }
+
+    private void CameraOrbitalMovement()
+    {
+        var horizontal = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
+        var vertical = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
+
+        transform.RotateAround(_currentPlanet.transform.position, Vector3.up, horizontal);
+        transform.RotateAround(_currentPlanet.transform.position, transform.right, -vertical);
+    }
+
+    private void Zoom()
+    {
+        var scroll = Input.GetAxis("Mouse ScrollWheel") * _zoomSpeed;
+        _distance = Mathf.Clamp(_distance - scroll, _minDistance, _maxDistance);
+        transform.localPosition = transform.localPosition.normalized * _distance;
+    }
+
     public void AttachToPlanet(Planet planet, CallBack callBack)
     {
         _currentPlanet = planet;
@@ -37,6 +68,7 @@ public class CameraMovement : MonoBehaviour
 
     public void ResetCamera(CallBack callBack)
     {
+        _isAttachedToPlanet = false;
         _currentPlanet = null;
         StartCoroutine(ResetCameraTransform(callBack));
     }
@@ -89,6 +121,15 @@ public class CameraMovement : MonoBehaviour
 
         transform.SetParent(_currentPlanet.transform);
         transform.localPosition = -_currentPlanet.transform.forward * planetRadious;
+
+        // current distance to planet
+        _distance = planetRadious;
+        // min distance to planet
+        _minDistance = planetRadious * 0.85f;
+        // max distance to planet
+        _maxDistance = planetRadious * 1.5f;
+
+        _isAttachedToPlanet = true;
         callBack();
     }
 }
